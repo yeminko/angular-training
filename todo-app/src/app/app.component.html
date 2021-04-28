@@ -1,0 +1,55 @@
+<div class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <span class="navbar-brand h1">Todo App</span>
+  </div>
+</div>
+<div class="container">
+  <br />
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="input-group">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Add task"
+          [(ngModel)]="task"
+          (keydown.enter)="onAddTask()"
+        />
+        <button class="btn btn-outline-secondary" (click)="onAddTask()">
+          + Add
+        </button>
+      </div>
+      <br />
+      <ul class="list-group">
+        <li
+          class="list-group-item list-group-item-action"
+          *ngFor="let todo of todos"
+        >
+          <input
+            type="checkbox"
+            class="form-check-input"
+            (click)="moveToDoneList(todo)"
+          />
+          {{ todo }}
+        </li>
+      </ul>
+      <br />
+      <p>Completed</p>
+      <ul class="list-group">
+        <li
+          class="list-group-item list-group-item-action list-group-item-secondary"
+          *ngFor="let done of doneList"
+        >
+          <input
+            type="checkbox"
+            class="form-check-input"
+            checked
+            (click)="moveToTodos(done)"
+          />
+          {{ done }}
+        </li>
+      </ul>
+      <br />
+    </div>
+  </div>
+</div>
