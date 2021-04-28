@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <span class="navbar-brand h1">Calculator</span>
+  </div>
+</nav>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 h1 text-end">{{ output ? output : "0" }}</div>
+  </div>
+  <div class="row" *ngFor="let row of rows">
+    <div
+      class="col"
+      *ngFor="let col of row.cols"
+      [ngClass]="{ 'col-6': col.name === '=' }"
+    >
+      <button class="btn btn-light btn-lg" (click)="onPress(col.name)">
+        <span *ngIf="col.type === 'text'; else Icon">{{ col.name }}</span>
+        <ng-template #Icon>
+          <i [class]="col.icon"></i>
+        </ng-template>
+      </button>
+    </div>
+  </div>
+</div>

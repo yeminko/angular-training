@@ -1,0 +1,14 @@
+<app-server></app-server>
+<app-server></app-server>
+
+<button class="btn btn-primary" (click)="showDetail = !showDetail; addLogs()">
+  Display Details
+</button>
+<p *ngIf="showDetail">This is detail text.....</p>
+<div
+  *ngFor="let log of logs; let i = index"
+  [ngStyle]="{ backgroundColor: i > 3 ? 'blue' : '' }"
+  [ngClass]="{ log: i > 3 }"
+>
+  {{ log }}
+</div>
