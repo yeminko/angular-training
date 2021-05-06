@@ -1,0 +1,51 @@
+<!-- Header -->
+<div class="form-floating mt-3">
+  <input
+    type="text"
+    class="form-control"
+    placeholder="Header"
+    [(ngModel)]="note.header"
+  />
+  <label for="floatingInput">Header</label>
+</div>
+
+<!-- Title -->
+<div class="form-floating mt-3">
+  <input
+    type="text"
+    class="form-control"
+    placeholder="Title"
+    [(ngModel)]="note.title"
+  />
+  <label for="floatingInput">Title</label>
+</div>
+
+<!-- Note -->
+<div class="form-floating mt-3">
+  <textarea
+    class="form-control"
+    placeholder="Note"
+    style="height: 300px"
+    [(ngModel)]="note.note"
+  ></textarea>
+  <label for="floatingTextarea">Note</label>
+</div>
+
+<button type="button" class="btn btn-success mt-3" (click)="onSave()">
+  Save
+</button>
+
+<button
+  class="btn btn-danger mt-3 ms-2"
+  (click)="onDelete()"
+  *ngIf="note.id !== -1"
+>
+  Delete
+</button>
+<button
+  type="button"
+  class="btn btn-outline-secondary mt-3 ms-2"
+  (click)="onCancel()"
+>
+  Cancel
+</button>
