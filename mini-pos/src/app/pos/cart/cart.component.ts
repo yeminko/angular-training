@@ -7,6 +7,7 @@ import {
 } from '@angular/core';
 import { Item } from 'src/app/item';
 import { Print } from 'src/app/print/print';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-cart',
@@ -26,6 +27,11 @@ export class CartComponent implements OnChanges {
   total = 0;
   paid = 0;
   charged = 0;
+  assetsPath = '';
+
+  constructor() {
+    this.assetsPath = environment.assetsPath;
+  }
 
   addToCart(item: Item) {
     if (this.isItemIncluded(item.id)) {

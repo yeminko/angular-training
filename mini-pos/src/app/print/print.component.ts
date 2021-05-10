@@ -5,6 +5,7 @@ import {
   Input,
   Output,
 } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { Print } from './print';
 
 @Component({
@@ -15,6 +16,11 @@ import { Print } from './print';
 export class PrintComponent implements AfterViewInit {
   @Input() print: Print = new Print([], 0, 0, 0);
   @Output() printDone = new EventEmitter<void>();
+  assetsPath = '';
+
+  constructor() {
+    this.assetsPath = environment.assetsPath;
+  }
 
   ngAfterViewInit() {
     window.print();

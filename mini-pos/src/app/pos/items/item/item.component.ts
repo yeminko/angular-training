@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Item } from 'src/app/item';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-item',
@@ -14,4 +15,9 @@ export class ItemComponent {
     image: '',
     quantity: 1,
   };
+  assetsPath = '';
+
+  constructor() {
+    this.assetsPath = environment.assetsPath;
+  }
 }
