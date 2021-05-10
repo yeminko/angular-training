@@ -1,0 +1,16 @@
+<div id="pos">
+  <nav class="navbar navbar-light bg-light sticky-top">
+    <div class="container-fluid">
+      <span class="navbar-brand">
+        <img src="assets/logo.png" alt="Jeni's" height="25" />
+      </span>
+    </div>
+  </nav>
+  <app-pos (printed)="onPrinted($event)"></app-pos>
+</div>
+
+<app-print
+  [print]="print"
+  (printDone)="onPrintDone()"
+  *ngIf="showPrint"
+></app-print>

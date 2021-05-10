@@ -1,0 +1,13 @@
+<div class="container my-3">
+  <div class="row">
+    <div class="col-8">
+      <app-items (addToCart)="onAddedToCart($event)"></app-items>
+    </div>
+    <div class="col-4">
+      <app-cart
+        [addedItem]="addedItem"
+        (printed)="onPrinted($event)"
+      ></app-cart>
+    </div>
+  </div>
+</div>

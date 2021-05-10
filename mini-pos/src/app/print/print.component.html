@@ -1,0 +1,36 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-12">
+      <img src="assets/logo.png" alt="Jeni's" height="50" />
+      <hr />
+      <table class="table table-striped">
+        <thead>
+          <th>Item Name</th>
+          <th>Quantity</th>
+          <th>Price</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of print.items">
+            <td>{{ item.name }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>{{ item.price }}</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="2" class="text-end fw-bold">Total</td>
+            <td>{{ print.total }} Ks</td>
+          </tr>
+          <tr>
+            <td colspan="2" class="text-end fw-bold">Paid</td>
+            <td>{{ print.paid }} Ks</td>
+          </tr>
+          <tr>
+            <td colspan="2" class="text-end fw-bold">Charged</td>
+            <td>{{ print.charged }} Ks</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+</div>

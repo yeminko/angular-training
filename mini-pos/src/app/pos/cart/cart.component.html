@@ -1,0 +1,60 @@
+<h5>Cart</h5>
+<hr />
+<ul class="list-group overflow-auto scroll-hide" style="height: 50vh">
+  <li
+    class="list-group-item d-flex justify-content-between align-items-center"
+    *ngFor="let item of items"
+  >
+    <div class="d-flex">
+      <img [src]="'assets/' + item.image" style="width: 50px; height: 50px" />
+      <div>
+        <div class="fw-bold">{{ item.name }}</div>
+        <div>{{ item.price }}</div>
+      </div>
+    </div>
+    <div
+      class="d-flex justify-content-between align-items-center"
+      style="width: 100px"
+    >
+      <button
+        class="btn btn-outline-primary btn-small"
+        (click)="decreaseQuantity(item)"
+      >
+        -
+      </button>
+      <div class="fw-bold">{{ item.quantity }}</div>
+
+      <button
+        class="btn btn-outline-primary btn-small"
+        (click)="increaseQuantity(item)"
+      >
+        +
+      </button>
+    </div>
+  </li>
+</ul>
+
+<hr />
+<div class="d-flex justify-content-between">
+  <h5>Total</h5>
+  <h5>{{ total }} Ks</h5>
+</div>
+<div class="d-flex justify-content-between">
+  <h5>Paid</h5>
+  <input
+    type="text"
+    class="form-control text-end fw-bold w-75"
+    [(ngModel)]="paid"
+    (keyup)="calculateCharged()"
+  />
+</div>
+<hr />
+<div class="d-flex justify-content-between mx-auto">
+  <h5>Changed</h5>
+  <h5>{{ charged }} Ks</h5>
+</div>
+
+<br />
+<button class="btn btn-success btn-block w-100" (click)="onPrint()">
+  Print
+</button>
