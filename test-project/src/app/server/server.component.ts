@@ -1,59 +1,19 @@
-import {
-  AfterContentChecked,
-  AfterContentInit,
-  AfterViewChecked,
-  AfterViewInit,
-  Component,
-  DoCheck,
-  Input,
-  OnChanges,
-  OnDestroy,
-  OnInit,
-  SimpleChanges,
-} from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { LoggingService } from '../logging.service';
 
 @Component({
   selector: 'app-server',
   templateUrl: './server.component.html',
   styleUrls: ['./server.component.scss'],
+  providers: [LoggingService],
 })
-export class ServerComponent
-  implements
-    OnChanges,
-    OnInit,
-    DoCheck,
-    AfterContentInit,
-    AfterContentChecked,
-    AfterViewInit,
-    AfterViewChecked,
-    OnDestroy {
-  @Input() name = '';
-  constructor() {
-    console.log('This is constructor');
-  }
+export class ServerComponent {
+  @Input() log = '';
+  @Input() index = -1;
 
-  ngOnChanges(changes: SimpleChanges) {
-    console.log('This is onChanges', changes);
-  }
-  ngOnInit() {
-    console.log('This is onInit');
-  }
-  ngDoCheck() {
-    console.log('This is doCheck');
-  }
-  ngAfterContentInit() {
-    console.log('This is afterContentInit');
-  }
-  ngAfterContentChecked() {
-    console.log('This is afterContentChecked');
-  }
-  ngAfterViewInit() {
-    console.log('This is afterViewInit');
-  }
-  ngAfterViewChecked() {
-    console.log('This is afterViewChecked');
-  }
-  ngOnDestroy() {
-    console.log('This is onDestroy');
+  constructor(private loggingService: LoggingService) {}
+
+  updateLog() {
+    this.loggingService.updateLog(this.index, this.log + '(checked)');
   }
 }
