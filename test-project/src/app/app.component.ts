@@ -1,18 +1,24 @@
-import { Component, OnInit } from '@angular/core';
-import { LoggingService } from './logging.service';
+import { Component } from '@angular/core';
+import { CountService } from './count.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  providers: [LoggingService],
 })
-export class AppComponent implements OnInit {
-  logs: Array<string> = [];
-  constructor(private loggingService: LoggingService) {}
+export class AppComponent {
+  activeToInactive = 0;
+  inactiveToActive = 0;
+
+  constructor(private countService: CountService) {}
+
+  ngOnChanges() {
+    this.activeToInactive = this.countService.activeToInactiveCount;
+    this.inactiveToActive = this.countService.inactiveToActiveCount;
+  }
 
   ngOnInit() {
-    this.loggingService.printLog('This is log');
-    this.logs = this.loggingService.logs;
+    this.activeToInactive = this.countService.activeToInactiveCount;
+    this.inactiveToActive = this.countService.inactiveToActiveCount;
   }
 }
