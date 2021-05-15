@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { Print } from './print/print';
 
 @Component({
@@ -9,6 +10,11 @@ import { Print } from './print/print';
 export class AppComponent {
   print: Print = new Print([], 0, 0, 0);
   showPrint = false;
+  assetsPath = '';
+
+  constructor() {
+    this.assetsPath = environment.assetsPath;
+  }
 
   onPrinted(print: Print) {
     this.print = print;
