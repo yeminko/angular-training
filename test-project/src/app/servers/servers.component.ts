@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-servers',
@@ -6,7 +6,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./servers.component.scss'],
 })
 export class ServersComponent implements OnInit {
-  logs: Array<string> = [];
+  count = 100;
 
   constructor() {}
 
