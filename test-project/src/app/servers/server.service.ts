@@ -14,17 +14,17 @@ export class ServerService {
     {
       id: 1,
       name: 'Server-1',
-      status: 'Online',
+      status: 'online',
     },
     {
       id: 2,
       name: 'Server-2',
-      status: 'Offline',
+      status: 'offline',
     },
     {
       id: 3,
       name: 'Server-3',
-      status: 'Online',
+      status: 'online',
     },
   ];
 

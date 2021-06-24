@@ -15,8 +15,6 @@ export class AppComponent {
   }
 
   onPress(key: string) {
-    console.log(key);
-
     switch (key) {
       case '=':
         try {
@@ -30,15 +28,13 @@ export class AppComponent {
         this.output = '';
         break;
       case 'backspace':
-        console.log(this.output);
-
         this.output = (this.output + '').slice(0, -1);
         break;
       default:
         if (this.isCalculated) {
           this.output = '';
+          this.isCalculated = false;
         }
-        this.isCalculated = false;
         this.output += key;
     }
   }
