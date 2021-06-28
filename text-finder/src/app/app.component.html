@@ -1,0 +1,44 @@
+<div class="container mt-5">
+  <div class="row align-items-center mb-3">
+    <div class="col">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Find some text"
+        [(ngModel)]="searchTerm"
+      />
+    </div>
+    <div class="col">
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          id="flexCheckDefault"
+          [(ngModel)]="caseSensitive"
+        />
+        <label class="form-check-label" for="flexCheckDefault">
+          Case Sensitive
+        </label>
+      </div>
+    </div>
+  </div>
+  <p
+    [appHighlight]="searchTerm"
+    [caseSensitive]="caseSensitive"
+    customClass="bg-success text-white"
+  >
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquid scire se
+    gaudeant Sed haec nihil sane ad rem; Quod iam a me expectare noli. Quamquam
+    haec quidem praeposita recte et reiecta dicere licebit. Minime vero, inquit
+    ille, consentit. Age, inquies, ista parva sunt. Quare ad ea primum, si
+    videtur; Itaque hic ipse iam pridem est reiectus; Deprehensus omnem poenam
+    contemnet. At certe gravius. Ut aliquid scire se gaudeant Duo Reges:
+    constructio interrete. Quorum sine causa fieri nihil putandum est. Quam ob
+    rem tandem, inquit, non satisfacit Nihil opus est exemplis hoc facere
+    longius. Erat enim Polemonis. Nunc haec primum fortasse audientis servire
+    debemus. Sed fortuna fortis; Itaque his sapiens semper vacabit. Cur, nisi
+    quod turpis oratio est Non est ista, inquam, Piso, magna dissensio. Iam id
+    ipsum absurdum, maximum malum neglegi. Suam denique cuique naturam esse ad
+    vivendum ducem.
+  </p>
+</div>
