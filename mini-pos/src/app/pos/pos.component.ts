@@ -9,7 +9,6 @@ import { Print } from '../print/print';
 })
 export class PosComponent {
   @Output() printed = new EventEmitter<Print>();
-  addedToCart: Item[] = [];
   addedItem: Item = {
     id: -1,
     name: '',
