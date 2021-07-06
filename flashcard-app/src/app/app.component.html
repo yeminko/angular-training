@@ -1,0 +1,49 @@
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <span class="navbar-brand h1">FlashCards</span>
+    <span
+      class="text-end fw-bold btn"
+      [ngClass]="{ 'text-danger': !deleteMode, 'text-primary': deleteMode }"
+      (click)="toggleDeleteMode()"
+      >{{ deleteMode ? "Done" : "Delete" }}</span
+    >
+  </div>
+</nav>
+
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-4">
+      <button class="btn btn-primary mb-2" (click)="onAddSet()">Add Set</button>
+      <ul class="list-group">
+        <app-set
+          *ngFor="let set of sets; let i = index"
+          [index]="i"
+          [set]="set"
+        ></app-set>
+      </ul>
+    </div>
+
+    <div class="col-8">
+      <ul class="list-group" *ngIf="!isCardView">
+        <app-flashcard
+          *ngFor="let flashcard of currentFlashcards; let i = index"
+          [flashcard]="flashcard"
+          [index]="i"
+        ></app-flashcard>
+        <p
+          class="list-group-item mt-3"
+          style="cursor: pointer; border: 0px"
+          *ngIf="sets.length > 0"
+          (click)="onAddFlashcard()"
+        >
+          Add Flashcard...
+        </p>
+      </ul>
+
+      <app-card-view
+        *ngIf="isCardView"
+        [flashcards]="currentFlashcards"
+      ></app-card-view>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<li class="list-group-item d-flex justify-content-between align-items-center">
+  <div>
+    <span
+      #termEl
+      contenteditable
+      placeholder="Enter Term"
+      (input)="updateTerm(termEl)"
+      >{{ term }}</span
+    >
+    <br />
+    <span
+      #defEl
+      contenteditable
+      placeholder="Enter Definition"
+      (input)="updateDefinition(defEl)"
+      >{{ definition }}</span
+    >
+  </div>
+  <div *ngIf="deleteMode">
+    <i
+      class="bi bi-trash text-danger"
+      style="font-size: 1.5em"
+      (click)="onDelete()"
+    ></i>
+  </div>
+</li>

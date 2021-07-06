@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import "../node_modules/bootstrap-icons/font/bootstrap-icons.css";
+
+[contenteditable]:focus {
+  outline: 1px solid #ced4da;
+}
+
+[contenteditable]:empty:before {
+  content: attr(placeholder);
+  pointer-events: none;
+  display: block; /* For Firefox */
+}
+
+/**
+* for contenteditable span
+*/
+span {
+  display: inline-block;
+  max-width: 100%;
+}

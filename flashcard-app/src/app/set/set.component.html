@@ -1,0 +1,45 @@
+<li
+  class="list-group-item d-flex justify-content-between align-items-center"
+  style="cursor: pointer"
+  [ngClass]="{ active: index === currentIndex }"
+>
+  <div (click)="onSetClick()" style="width: 100%">
+    <span
+      #nameEl
+      contenteditable
+      placeholder="Enter Name"
+      class="h5"
+      (input)="updateName(nameEl)"
+      >{{ name }}</span
+    >
+    <br />
+    <span
+      #descEl
+      contenteditable
+      placeholder="Enter Description"
+      (input)="updateDescription(descEl)"
+      >{{ description }}</span
+    >
+  </div>
+  <div *ngIf="deleteMode">
+    <i
+      class="bi bi-trash text-danger"
+      style="font-size: 1.5em"
+      (click)="onDelete()"
+    ></i>
+  </div>
+  <div *ngIf="!deleteMode && index === currentIndex">
+    <i
+      class="bi bi-play"
+      style="font-size: 2em"
+      *ngIf="!isCardView"
+      (click)="showCardView()"
+    ></i>
+    <i
+      class="bi bi-stop"
+      style="font-size: 2em"
+      *ngIf="isCardView"
+      (click)="showListView()"
+    ></i>
+  </div>
+</li>
