@@ -1,0 +1,40 @@
+<div
+  class="d-flex justify-content-center align-items-center w-100 text-white"
+  style="height: 100vh"
+>
+  <div
+    class="
+      d-flex
+      flex-column
+      align-items-center
+      gap-3
+      border border-secondary border-3
+      rounded
+    "
+    style="width: 25vw; padding: 30px; margin-bottom: 30vh"
+  >
+    <h3>{{ title }}</h3>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Username"
+      [(ngModel)]="user.username"
+    />
+    <input
+      type="password"
+      class="form-control"
+      placeholder="Password"
+      [(ngModel)]="user.password"
+    />
+    <button class="btn btn-primary w-100" (click)="onSubmit()">
+      {{ title }}
+    </button>
+    <button
+      class="btn btn-success w-100"
+      (click)="onSignUp()"
+      *ngIf="!isSignUp"
+    >
+      Sign Up
+    </button>
+  </div>
+</div>

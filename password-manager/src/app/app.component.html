@@ -1,0 +1,10 @@
+<div class="container-fluid g-0 bg-dark">
+  <div class="row g-0" style="height: 100vh">
+    <div class="col-2" *ngIf="canAccess">
+      <app-sidebar></app-sidebar>
+    </div>
+    <div [ngClass]="{ 'col-10': canAccess, 'col-12': !canAccess }">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

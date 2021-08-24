@@ -1,0 +1,83 @@
+<div
+  class="d-flex flex-column flex-shrink-0 p-3 text-white h-100"
+  style="background: #252a30"
+>
+  <a
+    routerLink="/passwords"
+    class="
+      d-flex
+      align-items-center
+      mb-3 mb-md-0
+      me-md-auto
+      text-white text-decoration-none
+    "
+  >
+    <span class="fs-4">Password Manager</span>
+  </a>
+  <hr />
+  <ul class="nav nav-pills flex-column mb-auto">
+    <li class="nav-item">
+      <a
+        class="nav-link text-white"
+        routerLinkActive="active"
+        routerLink="/passwords"
+      >
+        <i class="bi bi-asterisk"></i>
+        Passwords
+        <span class="badge bg-light text-primary">4</span>
+      </a>
+    </li>
+    <li>
+      <a
+        class="nav-link text-white"
+        routerLinkActive="active"
+        routerLink="/payment-cards"
+      >
+        <i class="bi bi-credit-card-fill"></i>
+        Payment Cards <span class="badge bg-light text-primary">4</span>
+      </a>
+    </li>
+    <li>
+      <a
+        class="nav-link text-white"
+        routerLinkActive="active"
+        routerLink="/secure-notes"
+      >
+        <i class="bi bi-journal-text"></i>
+        Secure Notes
+        <span class="badge bg-light text-primary">4</span>
+      </a>
+    </li>
+  </ul>
+  <hr />
+  <div class="dropdown">
+    <a
+      href="#"
+      class="
+        d-flex
+        align-items-center
+        text-white text-decoration-none
+        dropdown-toggle
+      "
+      id="dropdownUser1"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+    >
+      <i class="bi bi-person-circle fs-3 me-2"></i>
+      <strong>{{ username }}</strong>
+    </a>
+    <ul
+      class="dropdown-menu dropdown-menu-dark text-small shadow"
+      aria-labelledby="dropdownUser1"
+    >
+      <li>
+        <a
+          class="dropdown-item text-danger"
+          style="cursor: pointer"
+          (click)="onSignOut()"
+          >Sign out</a
+        >
+      </li>
+    </ul>
+  </div>
+</div>
