@@ -27,6 +27,7 @@ export class PasswordService {
       this.encryptedPasswords
     );
     this._passwords = JSON.parse(text || '[]');
+    this.passwordsChanged.emit(this.getPasswords());
   }
 
   getPasswords(): Password[] {

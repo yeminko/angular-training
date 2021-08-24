@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "ng-password-manager": {
+      "hosting": {
+        "password-manager": [
+          "ng-password-manager"
+        ]
+      }
+    }
+  }
+}
