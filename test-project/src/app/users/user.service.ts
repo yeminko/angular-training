@@ -1,4 +1,5 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
 export interface User {
   id: number;
@@ -9,6 +10,9 @@ export interface User {
   providedIn: 'root',
 })
 export class UserService {
+  private activatedEmitter = new Subject<boolean>();
+  activateObservable = this.activatedEmitter.asObservable();
+
   users: User[] = [
     {
       id: 1,
@@ -23,4 +27,8 @@ export class UserService {
       name: 'User 3',
     },
   ];
+
+  doActivate() {
+    this.activatedEmitter.next(true);
+  }
 }
